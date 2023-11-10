@@ -1,21 +1,26 @@
 from tkinter import *
 import webbrowser as w
 import os
-path=os.path.expanduser("~/Desktop")
+path=os.path.expanduser("~\Desktop")
+try:
+    os.mkdir(path+"\WEB")
+except OSError:
+    print("Error Path exists")
+path+="\WEB"
 def run():
-	w.open(path+"/example.html")
+	w.open(path+"\example.html")
 def saver(a):
     data=a.get('1.0','end')
     print(data)
     if(a==html):
-                with open(path+"/example.html","w") as wf:
-                    wf.write(data)
+        with open(path+"\example.html","w") as wf:
+            wf.write(data)
     elif(a==css):
-            with open(path+"/example.css","w") as wf:
-                    wf.write(data)
+        with open(path+"\example.css","w") as wf:
+            wf.write(data)
     elif(a==js):
-            with open(path+"/example.js","w") as wf:
-                    wf.write(data)
+        with open(path+"\example.js","w") as wf:
+            wf.write(data)
 			
 			
 import tkinter
